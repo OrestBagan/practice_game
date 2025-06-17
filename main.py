@@ -1,4 +1,5 @@
 import random
+from db import db
 
 def choose_word(word_list):
     return random.choice(word_list)
@@ -12,7 +13,7 @@ def specifik_word(word, saved_letters):
              result += "_"
 
 def play_game():
-    words = ["Максим", "Орест", "Олег"]
+    words = db()
     selected_word = choose_word(words)
     selected_word_len = len(selected_word)
     saved_letters = set()
@@ -21,7 +22,7 @@ def play_game():
     print("Cлово має" + str(selected_word_len) + "літери")
 
 
-attempts = 6
+    attempts = 6
 
     while attempts > 0:
         print("\nСлово: " + specifik_word(selected_word, saved_letters))
