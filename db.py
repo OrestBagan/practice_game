@@ -1,5 +1,4 @@
 import mysql.connector
-import requests
 
 def db():
     def words():
